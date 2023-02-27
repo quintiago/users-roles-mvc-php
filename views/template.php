@@ -41,22 +41,18 @@
 
         <!-- =============================================== -->
 
-        <div class="content-wrapper">
+        <?php
+        if (isset($_GET["page"])) {
 
-            <?php
-            if (isset($_GET["page"])) {
+            if (
+                $_GET["page"] == "users" ||
+                $_GET["page"] == "roles"
+            ) {
 
-                if (
-                    $_GET["page"] == "users" ||
-                    $_GET["page"] == "roles"
-                ) {
-
-                    include "pages/" . $_GET["page"] . ".php";
-                }
+                include "pages/" . $_GET["page"] . ".php";
             }
-            ?>
-
-        </div>
+        }
+        ?>
 
         <?php include "modules/footer.php"; ?>
 
