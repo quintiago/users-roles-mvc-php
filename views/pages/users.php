@@ -26,12 +26,52 @@
                                         <th style="width:10px">#</th>
                                         <th>Nombre</th>
                                         <th>Usuarios</th>
-                                        <th>Foto</th>
                                         <th>Rol</th>
+                                        <th>Foto</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+
+                                    ?>
+                                    <?php
+                                    foreach ($users as $key => $value) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo ($key + 1) ?></td>
+                                            <td><?php echo $value["name"] ?></td>
+                                            <td><?php echo $value["user"] ?></td>
+                                            <td><?php echo $value["rol"] ?></td>
+                                            <td><?php echo $value["picture"] ?></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-pencil-alt text-white"></i>
+                                                    </button>
+                                                    <button class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                    <!-- <tr>
+                                        <td>1</td>
+                                        <td>Hotel Portabelos</td>
+                                        <td>Portabelos</td>
+                                        <td>Administrador</td>
+                                        <td><button class="btn btn-info btn-sm">Activo</button></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-warning btn-sm">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
