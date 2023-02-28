@@ -96,7 +96,7 @@ Modal Create users
             </div>
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <input type="text" class="form-control" name="name_profile" placeholder="Nombre">
+                    <input type="text" class="form-control" name="name_users" placeholder="Nombre">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
@@ -109,19 +109,27 @@ Modal Create users
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
                     <div class="btn btn-default btn-file" bis_skin_checked="1">
-                        <i class="fas fa-paperclip"></i> Adjuntar Imagen de perfil
-                        <input type="file" name="upImgProfile">
+                        <i class="fas fa-paperclip"></i> Adjuntar Imagen de usuarios
+                        <input type="file" name="upImgUsers">
                     </div>
-                    <img class="previewImgProfile img-fluid py-2" width="200" height="200">
+                    <img class="previewImgUsers img-fluid py-2" width="200" height="200">
                     <p class="help-block small"> Dimensiones: 480px * 382px | Peso Max. 2MB | Formato: JPG o PNG</p>
                 </div>
                 <div class="form-group has-feedback">
                     <label>Rol</label>
+                    <select class="form-control" name="rol_user" required>
+                        <option value="1">Administrador</option>
+                        <option value="2">Ayudante</option>
+                    </select>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
+                <?php 
+                $saveusers = new ctrUsers();
+                $saveusers  -> ctrsaveusers();
+                ?>
             </form>
         </div>
     </div>
